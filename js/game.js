@@ -21,6 +21,7 @@ class Game {
         this.draggedYarn = null;
         this.history = [];
         this.particles = [];
+        this.gameLoopId = null;
         
         this.setupEventListeners();
         this.loadSettings();
@@ -31,12 +32,16 @@ class Game {
     }
     
     async loadLevel(levelNum) {
+        console.log(`📍 Loading level ${levelNum}...`);
+        
         const levelData = await this.levelManager.getLevel(levelNum);
         
         if (!levelData) {
             console.log('🎉 All levels completed!');
             return;
         }
+        
+        console.log(`✅ Level ${levelNum} data loaded:`, levelData);
         
         this.currentLevel = levelNum;
         this.moves = 0;
@@ -56,6 +61,8 @@ class Game {
             this.tempSlots.push(new Slot(i, 'temp', levelData.slotCapacity));
         }
         
+        console.log(`Created ${this.slots.length} target slots and ${this.tempSlots.length} temp slots`);
+        
         // Create yarns
         this.yarns = [];
         levelData.yarns.forEach((yarnData, index) => {
@@ -65,12 +72,16 @@ class Game {
             this.yarns.push(yarn);
         });
         
+        console.log(`Created ${this.yarns.length} yarns`);
+        
         this.updateUI();
         this.renderer.render(this.yarns, this.slots, this.tempSlots, this.draggedYarn, this.particles);
         this.startGameLoop();
     }
     
     startGameLoop() {
+        console.log('🎮 Starting game loop...');
+        
         if (this.gameLoopId) cancelAnimationFrame(this.gameLoopId);
         
         const loop = () => {
@@ -249,6 +260,7 @@ class Game {
     }
     
     nextLevel() {
+        console.log(`➡️ Going to level ${this.currentLevel + 1}`);
         this.currentLevel++;
         this.loadLevel(this.currentLevel);
     }
