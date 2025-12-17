@@ -38,6 +38,7 @@ class Game {
         
         if (!levelData) {
             console.log('🎉 All levels completed!');
+            alert('🎉 Congratulations! You completed all levels!');
             return;
         }
         
@@ -219,6 +220,8 @@ class Game {
         
         this.updateUI();
         this.playSound('levelComplete');
+        
+        console.log('🎉 Level complete! Showing modal...');
         showLevelComplete(this.moves, this.score, isPerfect);
         return true;
     }
@@ -240,23 +243,36 @@ class Game {
     }
     
     showHint() {
-        // Find a valid move
+        console.log('💡 Searching for hint...');
+        
+        // Clear any existing hints
+        this.yarns.forEach(y => y.showHint = false);
+        
+        // Find first valid move
         const allSlots = [...this.slots, ...this.tempSlots];
         
-        for (const slot of allSlots) {
-            const yarn = slot.getTopYarn();
+        for (const sourceSlot of allSlots) {
+            const yarn = sourceSlot.getTopYarn();
             if (yarn) {
                 for (const targetSlot of allSlots) {
-                    if (targetSlot !== slot && targetSlot.canAddYarn(yarn)) {
-                        console.log('💡 Hint: Try moving this yarn!');
+                    if (targetSlot !== sourceSlot && targetSlot.canAddYarn(yarn)) {
+                        console.log('💡 Hint found! Highlighting yarn...');
                         yarn.showHint = true;
-                        setTimeout(() => { yarn.showHint = false; }, 1000);
                         this.playSound('hint');
-                        return;
+                        
+                        // Clear hint after 2 seconds
+                        setTimeout(() => {
+                            yarn.showHint = false;
+                        }, 2000);
+                        
+                        return; // Found hint, stop searching
                     }
                 }
             }
         }
+        
+        console.log('❌ No valid moves found!');
+        alert('No hints available. Try undoing some moves!');
     }
     
     nextLevel() {
@@ -280,7 +296,6 @@ class Game {
     
     playSound(type) {
         if (!this.settings.soundEnabled) return;
-        // Sound implementation would go here
         console.log('🔊 Sound:', type);
     }
     
