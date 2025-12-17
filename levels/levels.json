@@ -5,17 +5,20 @@
       "name": "Getting Started",
       "targetSlots": 3,
       "tempSlots": 2,
-      "slotCapacity": 3,
+      "slotCapacity": 4,
       "yarns": [
         { "color": "#FF6B9D", "startSlot": 0 },
         { "color": "#FF6B9D", "startSlot": 0 },
         { "color": "#FF6B9D", "startSlot": 0 },
+        { "color": "#FF6B9D", "startSlot": 0 },
         { "color": "#4ECDC4", "startSlot": 1 },
         { "color": "#4ECDC4", "startSlot": 1 },
-        { "color": "#4ECDC4", "startSlot": 0 },
+        { "color": "#4ECDC4", "startSlot": 1 },
+        { "color": "#4ECDC4", "startSlot": 1 },
+        { "color": "#FFD93D", "startSlot": 0 },
+        { "color": "#FFD93D", "startSlot": 0 },
         { "color": "#FFD93D", "startSlot": 1 },
-        { "color": "#FFD93D", "startSlot": 1 },
-        { "color": "#FFD93D", "startSlot": 0 }
+        { "color": "#FFD93D", "startSlot": 1 }
       ]
     },
     {
@@ -23,7 +26,7 @@
       "name": "Color Mix",
       "targetSlots": 4,
       "tempSlots": 2,
-      "slotCapacity": 3,
+      "slotCapacity": 4,
       "yarns": [
         { "color": "#FF6B9D", "startSlot": 0 },
         { "color": "#4ECDC4", "startSlot": 0 },
@@ -36,7 +39,11 @@
         { "color": "#FF6B9D", "startSlot": 0 },
         { "color": "#4ECDC4", "startSlot": 1 },
         { "color": "#FFD93D", "startSlot": 0 },
-        { "color": "#A8E6CF", "startSlot": 1 }
+        { "color": "#A8E6CF", "startSlot": 1 },
+        { "color": "#FF6B9D", "startSlot": 1 },
+        { "color": "#4ECDC4", "startSlot": 0 },
+        { "color": "#FFD93D", "startSlot": 1 },
+        { "color": "#A8E6CF", "startSlot": 0 }
       ]
     },
     {
@@ -44,23 +51,28 @@
       "name": "Rainbow Challenge",
       "targetSlots": 5,
       "tempSlots": 3,
-      "slotCapacity": 3,
+      "slotCapacity": 4,
       "yarns": [
         { "color": "#FF6B9D", "startSlot": 0 },
         { "color": "#FF6B9D", "startSlot": 1 },
         { "color": "#FF6B9D", "startSlot": 2 },
-        { "color": "#4ECDC4", "startSlot": 0 },
+        { "color": "#FF6B9D", "startSlot": 0 },
         { "color": "#4ECDC4", "startSlot": 1 },
         { "color": "#4ECDC4", "startSlot": 2 },
+        { "color": "#4ECDC4", "startSlot": 0 },
+        { "color": "#4ECDC4", "startSlot": 1 },
+        { "color": "#FFD93D", "startSlot": 2 },
         { "color": "#FFD93D", "startSlot": 0 },
         { "color": "#FFD93D", "startSlot": 1 },
         { "color": "#FFD93D", "startSlot": 2 },
         { "color": "#A8E6CF", "startSlot": 0 },
         { "color": "#A8E6CF", "startSlot": 1 },
         { "color": "#A8E6CF", "startSlot": 2 },
-        { "color": "#FF8B94", "startSlot": 0 },
+        { "color": "#A8E6CF", "startSlot": 0 },
         { "color": "#FF8B94", "startSlot": 1 },
-        { "color": "#FF8B94", "startSlot": 2 }
+        { "color": "#FF8B94", "startSlot": 2 },
+        { "color": "#FF8B94", "startSlot": 0 },
+        { "color": "#FF8B94", "startSlot": 1 }
       ]
     }
   ]
