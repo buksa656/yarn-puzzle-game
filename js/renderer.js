@@ -7,7 +7,7 @@ class Renderer {
         this.slotWidth = 70;
         this.slotHeight = 130;
         this.yarnRadius = 22;
-        this.yarnSpacing = 28;
+        this.yarnSpacing = 35;
         
         this.resize();
     }
