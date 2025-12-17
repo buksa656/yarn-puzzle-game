@@ -28,9 +28,9 @@ class LevelManager {
                 {
                     id: 1,
                     name: 'Getting Started',
-                    targetSlots: 3,  // POPRAWIONE: było 2, teraz 3 (bo mamy 3 kolory)
+                    targetSlots: 3, 
                     tempSlots: 2,
-                    slotCapacity: 3,
+                    slotCapacity: 5,
                     yarns: [
                         { color: '#FF6B9D', startSlot: 0 },
                         { color: '#FF6B9D', startSlot: 0 },
